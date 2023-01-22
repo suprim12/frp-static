@@ -1,0 +1,83 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+  background-color: #cbcbcb;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  @apply flex items-center;
+  height: 80px;
+  width: 100%;
+  & .container {
+    @apply flex items-center justify-between;
+  }
+
+  ul {
+    @apply flex items-center gap-5;
+  }
+
+  &__logo {
+    width: 80px;
+  }
+  &__actions {
+    svg {
+      width: 18px;
+    }
+  }
+}
+
+.section__content {
+  @apply grid grid-cols-12 gap-4;
+  &_left {
+    @apply col-span-4;
+  }
+  &_right {
+    @apply col-span-8;
+  }
+}
+
+.loop-container {
+  white-space: nowrap;
+  letter-spacing: 5px;
+  /* transform: rotate(7deg); */
+  .item {
+    position: absolute;
+  }
+}
+
+.hero {
+  .section__content_left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 2rem;
+  }
+  .section__content_right {
+    position: relative;
+  }
+
+  & .loop-container {
+    position: absolute;
+    white-space: nowrap;
+    top: 35%;
+    left: 0;
+    transform: translateY(-35%);
+    color: #fff;
+  }
+  &__txt {
+    font-size: 8vw;
+  }
+  &__img {
+    position: absolute;
+    top: -103px;
+    z-index: -1;
+    height: calc(100vh + 80px);
+    width: 100%;
+    left: 0;
+  }
+}
